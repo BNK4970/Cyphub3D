@@ -1,0 +1,108 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-background: #101010;
+    --color-foreground: #e5e5e5;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    display: grid;
+    grid-template-rows: repeat(2, 100vh);
+}
+
+header {
+    z-index: 10;
+    width: 100%;
+    height: 80px;
+    background-color: #202020;
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr, auto, 1fr;
+    align-items: center;
+    h1 {
+        margin-left: 50px;
+        grid-column-start: 1;
+        column-span: 1;
+        width: fit-content;
+    }
+    ul {
+        grid-column-start: 2;
+        column-span: 1;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        li {
+            list-style: none;
+        }
+    }
+    button {
+        width: fit-content;
+        margin-left: auto;
+        padding: 0.5em 2.25em;
+        margin-right: 50px;
+        grid-column-start: 3;
+        column-span: 1;
+    }
+}
+section {
+    width: 100%;
+    height: 100vh;
+}
+::-webkit-scrollbar {}
+.hero {
+    background-color: blue;
+    display: grid;
+    place-items: center;
+    position: relative;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    justify-items: stretch;
+    place-items: center stretch;
+    #data {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        z-index: 5;
+        width: fit-content;
+        margin: 0px auto;
+        margin-bottom: 200px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        h1 {
+            font-size: 82px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        .cita {
+            text-align: left;
+            li {
+                list-style: none;
+            }
+        }
+    }
+    canvas {
+        max-height: 100%;
+        max-width: 100%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        z-index: 0;
+    }
+}
+
+/* * {
+    outline: 1px solid red;
+} */
